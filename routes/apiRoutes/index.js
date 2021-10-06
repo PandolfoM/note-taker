@@ -8,6 +8,8 @@ router.get("/notes", (req, res) => {
 });
 
 router.post('/notes', (req, res) => {
+  req.body.id = notes.length.toString()
+
   if (!validateNotes(req.body)) {
     res.status(400).send("Please enter information for your note")
   } else {
