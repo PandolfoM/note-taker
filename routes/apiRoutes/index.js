@@ -1,6 +1,10 @@
 const router = require("express").Router();
 const { notes } = require("../../db/db");
-const { validateNotes, createNewNote, deleteId } = require("../../lib/notes");
+const {
+  validateNotes,
+  createNewNote,
+  deleteId,
+} = require("../../lib/notes");
 
 router.get("/notes", (req, res) => {
   let results = notes;
@@ -10,8 +14,7 @@ router.get("/notes", (req, res) => {
 router.delete("/notes/:id", (req, res) => {
   const result = deleteId(req.params.id, notes);
   const deleteItem = notes.splice(result, 1);
-  console.log(result);
-  console.log(deleteItem);
+  return res.send();
 });
 
 router.post("/notes", (req, res) => {
