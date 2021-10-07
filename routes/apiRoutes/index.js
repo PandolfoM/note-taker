@@ -9,7 +9,7 @@ router.get("/notes", (req, res) => {
 
 router.delete("/notes/:id", (req, res) => {
   const result = deleteId(req.params.id, notes);
-  const deleteItem = notes.splice(result);
+  const deleteItem = notes.splice(result, 1);
   console.log(result);
   console.log(deleteItem);
 });
