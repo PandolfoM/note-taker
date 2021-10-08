@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { notes } = require("../../db/db");
+const notes = require("../../db/db");
 const {
   validateNotes,
   createNewNote,
